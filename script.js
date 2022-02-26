@@ -1,6 +1,7 @@
 let operasi = "";
 let bil1 = 0;
 let bil2 = 0;
+let start = false ;
 
 const input = document.getElementById("input-nilai");
 const tombol = document.getElementsByClassName("tombol");
@@ -25,11 +26,11 @@ for (let i = 0; i < tombol.length; i++) {
       if(operasi === "x") input.value = parseInt(bil1) * parseInt(bil2);
       if(operasi === "/") parseFloat(input.value) = parseInt(bil1) / parseInt(bil2);
 
-
+      start =true;
     }
     else{
         const currentValue = parseInt(input.value);
-        if(currentValue===0){
+        if(currentValue===0 || start== true){
             input.value = tombol[i].innerText
         }else{
             input.value = currentValue + tombol[i].innerText
